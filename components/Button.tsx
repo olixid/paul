@@ -1,19 +1,24 @@
+import { cn } from "@/utils/helper";
 import * as React from "react";
 
-type ButtonProps = {
+export const ButtonVote = ({
+  children,
+  onClick,
+  className,
+}: {
   children: React.ReactNode;
-  onClick: () => void;
-};
-
-const Button = ({ children, onClick }: ButtonProps) => {
+  onClick?: () => void;
+  className?: string;
+}) => {
   return (
     <div
-      className="bg-stone-500 flex flex-col h-5 w-5 hover:bg-stone-400 hover:cursor-pointer select-none rounded-lg"
+      className={cn(
+        "bg-white dark:bg-gray-950 w-full justify-center p-5 border border-black flex flex-col px-3 py-2 items-center hover:bg-stone-400 dark:hover:bg-gray-900 hover:cursor-pointer select-none rounded-lg font-thin tracking-wider ",
+        className
+      )}
       onClick={onClick}
     >
-      <span className="mx-auto -my-1">{children}</span>
+      {children}
     </div>
   );
 };
-
-export default Button;

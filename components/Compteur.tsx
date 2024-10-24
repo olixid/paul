@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils/helper";
 import { useState } from "react";
-import Button from "./Button";
+import { ButtonVote } from "./Button";
 
 const Compteur = () => {
   const [compteur, setCompteur] = useState(0);
@@ -14,7 +14,7 @@ const Compteur = () => {
   };
   return (
     <div className="flex flex-row gap-3">
-      <Button onClick={() => myMoins()}>-</Button>
+      <ButtonVote onClick={() => myMoins()}>-</ButtonVote>
       <div
         className={cn(
           compteur > 0 && "text-green-300",
@@ -24,7 +24,7 @@ const Compteur = () => {
       >
         {compteur}
       </div>
-      <Button onClick={() => myPlus()}>+</Button>
+      <ButtonVote onClick={() => myPlus()}>+</ButtonVote>
     </div>
   );
 };
