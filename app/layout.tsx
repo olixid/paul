@@ -14,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
-        </ThemeProvider>
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );
