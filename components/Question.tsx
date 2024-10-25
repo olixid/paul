@@ -5,9 +5,9 @@ import { Share } from "lucide-react";
 
 const Question = ({ questionDuJour }: { questionDuJour: string }) => {
   return (
-    <div className="flex flex-col  max-w-96 mx-auto rounded-2xl p-6 shadow-lg gap-3 border border-black m-7">
+    <div className="flex flex-col max-w-96 mx-auto rounded-2xl p-6 shadow-lg gap-3 border border-black m-7">
       <div className="flex flex-row justify-between">
-        <div className="my-auto uppercase text-sm text-neutral-700 font-semibold">
+        <div className="my-auto uppercase text-sm bg-transparent font-semibold">
           Question d'opinion
         </div>
         <ButtonIcon className="p-[10px]">

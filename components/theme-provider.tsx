@@ -8,5 +8,13 @@ export default function ThemeProvider({
   children,
   ...props
 }: ThemeProviderProps) {
+  const [isMounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }
