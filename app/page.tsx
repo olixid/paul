@@ -1,11 +1,19 @@
+import BlockMenu from "@/components/BlockMenu";
 import Question from "@/components/Question";
+import { ThemeToggle } from "@/components/themeToggle";
 import Image from "next/image";
 
 export const Home = () => {
   return (
     <>
-      <div>
-        <Question questionDuJour="Michel Banier doit-il avoir recours à l'article 49-3 pour faire adopter le budget ?" />
+      <div className="flex justify-center">
+        <BlockMenu>
+          texte <br />
+          hgj
+          <br />
+          ghf
+          <br /> blabla
+        </BlockMenu>
       </div>
     </>
   );

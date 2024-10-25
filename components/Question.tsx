@@ -5,9 +5,9 @@ import { Share } from "lucide-react";
 
 const Question = ({ questionDuJour }: { questionDuJour: string }) => {
   return (
-    <div className="flex flex-col max-w-md mx-auto rounded-2xl p-6 shadow-lg gap-3 border border-black">
+    <div className="flex flex-col  max-w-96 mx-auto rounded-2xl p-6 shadow-lg gap-3 border border-black m-7">
       <div className="flex flex-row justify-between">
-        <div className="my-auto uppercase text-sm text-stone-500 font-semibold">
+        <div className="my-auto uppercase text-sm text-neutral-700 font-semibold">
           Question d'opinion
         </div>
         <ButtonIcon className="p-[10px]">
@@ -15,13 +15,13 @@ const Question = ({ questionDuJour }: { questionDuJour: string }) => {
         </ButtonIcon>
       </div>
 
-      <hr className="" />
+      <hr className="border-stone-400" />
       <Label>Société</Label>
       <div className="flex flex-col items-center gap-3">
-        <div className="text-2xl font-thin leading-8">{questionDuJour}</div>
-        <div className=" flex flex-row w-full gap-3">
+        <div className="text-2xl leading-8">{questionDuJour}</div>
+        <div className=" flex flex-col sm:flex-row w-full gap-3">
           <ButtonVote className="border-yellow-500 ">Oui</ButtonVote>
-          <ButtonVote className="border-purple-500 ">Non</ButtonVote>
+          <ButtonVote className="border-purple-800 ">Non</ButtonVote>
         </div>
         <ButtonVote>Je m'abstiens</ButtonVote>
       </div>

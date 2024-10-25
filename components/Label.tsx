@@ -1,12 +1,12 @@
+"use client";
+
 import React from "react";
 
 const Label = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-row gap-1 w-fit bg-black dark:bg-white rounded-full px-2 text-white dark:text-black ">
-      <span className="relative flex h-3 w-3 my-auto">
-        <span className="relative inline-flex rounded-full h-3 w-3 dark:bg-black bg-white "></span>
-      </span>
-      <span className="my-auto">{children}</span>
+    <div className="flex flex-none flex-row gap-1 w-fit bg-black  rounded-full py-2 px-3 text-white  ">
+      <span className=" relative flex h-2 w-2 my-auto rounded-full mx-1  bg-white "></span>
+      <span className="my-auto text-xs font-semibold">{children}</span>
     </div>
   );
 };

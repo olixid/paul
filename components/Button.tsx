@@ -13,7 +13,7 @@ export const ButtonVote = ({
   return (
     <div
       className={cn(
-        " w-full justify-center p-5 border border-black flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-lg font-thin tracking-wider ",
+        " w-full justify-center p-5 border border-black flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-lg tracking-wider ",
         className
       )}
       onClick={onClick}
@@ -35,7 +35,7 @@ export const ButtonIcon = ({
   return (
     <div
       className={cn(
-        " w-10 h-10 justify-center p-5 border border-stone-800 flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-full font-thin tracking-wider ",
+        " w-10 h-10 justify-center p-5 border border-stone-400 flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-full font-thin tracking-wider ",
         className
       )}
       onClick={onClick}
