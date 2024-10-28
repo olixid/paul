@@ -1,12 +1,25 @@
-"use client";
+import { cn } from "@/utils/helper";
 
 import React from "react";
 
-const Label = ({ children }: { children: React.ReactNode }) => {
+const Label = ({
+  children,
+  symbol,
+  className,
+}: {
+  children: React.ReactNode;
+  symbol?: boolean;
+  className?: string;
+}) => {
   return (
-    <div className="flex flex-none flex-row gap-1 w-fit bg-black  rounded-full py-2 px-3 text-white  ">
+    <div
+      className={cn(
+        "flex flex-none flex-row gap-1 w-fit bg-neutral-800  rounded-full py-[6px] px-3 text-white border border-neutral-800",
+        className
+      )}
+    >
       <span className=" relative flex h-2 w-2 my-auto rounded-full mx-1  bg-white "></span>
-      <span className="my-auto text-xs font-semibold">{children}</span>
+      <span className="my-auto text-xs font-semibold mr-1">{children}</span>
     </div>
   );
 };
