@@ -1,4 +1,5 @@
 import { cn } from "@/utils/helper";
+import { Speaker, Speech } from "lucide-react";
 
 import React from "react";
 
@@ -8,7 +9,7 @@ const Label = ({
   className,
 }: {
   children: React.ReactNode;
-  symbol?: boolean;
+  symbol?: "dot" | "speaker";
   className?: string;
 }) => {
   return (
@@ -18,7 +19,12 @@ const Label = ({
         className
       )}
     >
-      <span className=" relative flex h-2 w-2 my-auto rounded-full mx-1  bg-white "></span>
+      {symbol === "dot" ? (
+        <span className=" relative flex h-2 w-2 my-auto rounded-full mx-1  bg-white "></span>
+      ) : (
+        symbol === "speaker" && <Speech className="flex my-auto h-4 w-4 " />
+      )}
+
       <span className="my-auto text-xs font-semibold mr-1">{children}</span>
     </div>
   );

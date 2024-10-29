@@ -1,33 +1,52 @@
 import React from "react";
 import { ButtonIcon, ButtonVote } from "./Button";
 import Label from "./Label";
-import { Share } from "lucide-react";
+import { ArrowRight, Share, Vote } from "lucide-react";
+import { dot } from "node:test/reporters";
 
 const Question = ({
   question,
   theme,
-  intitulé,
+  intitule,
+  Answer = false,
 }: {
   question: string;
   theme: string;
-  intitulé: string;
+  intitule: "Question d'opinion" | "Hier";
+  Answer?: boolean;
 }) => {
   return (
     <div className="flex flex-col max-w-96 mx-auto rounded-2xl p-6 shadow-lg gap-3 border border-black m-7">
       <div className="flex flex-row justify-between">
-        <Label className="my-auto uppercase text-sm text-black  font-semibold bg-transparent border-transparent">
-          {intitulé}
-        </Label>
+        {intitule === "Question d'opinion" ? (
+          <Label
+            symbol="speaker"
+            className="my-auto uppercase text-sm text-black  font-semibold bg-transparent border-transparent"
+          >
+            {intitule}
+          </Label>
+        ) : (
+          <Label className="my-auto uppercase text-sm text-black  font-semibold bg-transparent border-transparent">
+            {intitule}
+          </Label>
+        )}
+
         <ButtonIcon className="p-[10px]">
-          <Share />
+          {intitule === "Question d'opinion" ? <Share /> : <ArrowRight />}
         </ButtonIcon>
       </div>
 
       <hr className="border-stone-400" />
-      <Label>{theme}</Label>
+      <Label symbol="dot">{theme}</Label>
       <div className="flex flex-col items-center gap-4">
         <div className="text-2xl leading-8">{question}</div>
-        <Choice />
+        {intitule === "Question d'opinion" ? (
+          <Choice />
+        ) : intitule === "Hier" ? (
+          <Result />
+        ) : (
+          Answer === true && <Send />
+        )}
       </div>
     </div>
   );
@@ -48,9 +67,23 @@ const Choice = () => {
 const Result = () => {
   return (
     <>
-      <div className=" flex flex-col sm:flex-row w-full gap-3">
-        <p>Autour de vous</p>
+      <div className=" flex flex-col sm:flex-row w-full gap-3 justify-between x-3">
+        <div className="flex flex-row">
+          <Vote className=" my-auto size-5" />
+          <p className=" mx-1 my-auto ">Autour de vous</p>
+        </div>
         <Label>Non 80%</Label>
+      </div>
+    </>
+  );
+};
+
+const Send = () => {
+  return (
+    <>
+      <div className=" flex flex-col  ">
+        <p className="">Votre vote a été pris en compte !</p>
+        <p className="text-sm">Rendez-vous demain pour les resultats.</p>
       </div>
     </>
   );

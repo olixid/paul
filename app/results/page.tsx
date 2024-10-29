@@ -10,7 +10,7 @@ const Rien = () => {
       <Question
         question="Faut-il faire payer l'entrée de la cathédrale Notre-Dame de Paris?"
         theme="Société"
-        intitulé="Hier"
+        intitule="Hier"
       />
       <BlockResultat />
     </div>

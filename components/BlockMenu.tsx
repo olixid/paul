@@ -14,11 +14,11 @@ const BlockMenu = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col bg-stone-200 rounded-t-3xl p-5 gap-3 w-5/6 h-full ">
+      <div className="flex flex-col dark:bg-neutral-800 dark:border border-neutral-600 bg-stone-200 rounded-3xl p-5 gap-3 w-5/6 h-full ">
         <Question
           question="Michel Banier doit-il avoir recours à l'article 49-3 pour faire adopter le budget ?"
           theme="Société"
-          intitulé="Question d'opinion"
+          intitule="Question d'opinion"
         />
         <div className="flex flex-row mx-10  ">
           <BookOpen className=" mx-2 my-auto" />

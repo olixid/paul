@@ -1,4 +1,5 @@
 import BlockMenu from "@/components/BlockMenu";
+import { ThemeToggle } from "@/components/themeToggle";
 
 export const Home = () => {
   return (
