@@ -1,7 +1,4 @@
 import BlockMenu from "@/components/BlockMenu";
-import Question from "@/components/Question";
-import { ThemeToggle } from "@/components/themeToggle";
-import Image from "next/image";
 
 export const Home = () => {
   return (
