@@ -3,6 +3,7 @@ import { ButtonIcon, ButtonVote } from "./Button";
 import Label from "./Label";
 import { ArrowRight, Share, Vote } from "lucide-react";
 import { dot } from "node:test/reporters";
+import { ProgressBar } from "@/components/ProgressBar";
 
 const Question = ({
   question,
@@ -43,7 +44,7 @@ const Question = ({
         {intitule === "Question d'opinion" ? (
           <Choice />
         ) : intitule === "Hier" ? (
-          <Result />
+          <Result pourcentage={33} />
         ) : (
           Answer === true && <Send />
         )}
@@ -64,7 +65,7 @@ const Choice = () => {
   );
 };
 
-const Result = () => {
+const Result = ({ pourcentage }: { pourcentage: number }) => {
   return (
     <>
       <div className=" flex flex-col sm:flex-row w-full gap-3 justify-between x-3">
@@ -72,8 +73,9 @@ const Result = () => {
           <Vote className=" my-auto size-5" />
           <p className=" mx-1 my-auto ">Autour de vous</p>
         </div>
-        <Label>Non 80%</Label>
+        <Label>Non {pourcentage}%</Label>
       </div>
+      <ProgressBar value={pourcentage} />
     </>
   );
 };

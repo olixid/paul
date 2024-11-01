@@ -1,4 +1,4 @@
-import BlockResultat from "@/components/BlackResultats";
+import BlockResultat from "@/components/BlockResultats";
 import Compteur from "@/components/Compteur";
 import Question from "@/components/Question";
 import ResPrecedent from "@/components/ResPrecedent";

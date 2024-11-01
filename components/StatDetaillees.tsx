@@ -4,6 +4,7 @@ import { ButtonVote } from "@/components/Button";
 import Label from "@/components/Label";
 import React from "react";
 import RadialChart from "@/components/RadialChart";
+import { ExternalLink } from "lucide-react";
 
 const StatDetaillees = ({
   question,
@@ -14,7 +15,7 @@ const StatDetaillees = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 ">
         <div className=" flex justify-center">
           <Label symbol="dot">Developpement durable{theme}</Label>
         </div>
@@ -34,7 +35,14 @@ const StatDetaillees = ({
           partagez l'app pour nous aider à faire grandir l'échantillon de
           personnes !
         </p>
-        <ButtonVote>Partagez l'application</ButtonVote>
+        <ButtonVote>
+          <div className="flex flex-row space-x-2">
+            <p className="flex my-auto tracking-normal">
+              Partagez l'application
+            </p>
+            <ExternalLink className="flex size-4 my-auto" />
+          </div>
+        </ButtonVote>
       </div>
     </>
   );

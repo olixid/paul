@@ -2,7 +2,7 @@
 
 import React from "react";
 import Label from "./Label";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 const ResPrecedent = ({
   children,
@@ -32,7 +32,7 @@ const ResPrecedent = ({
           <p>{children}</p>
           <p className="text-neutral-500 text-sm">{date}</p>
         </div>
-        <ArrowRight className="flex my-auto" />
+        <ChevronRight className="flex my-auto" />
       </div>
       <hr className="border-stone-400" />
     </>

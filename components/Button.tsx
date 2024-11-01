@@ -35,7 +35,7 @@ export const ButtonIcon = ({
   return (
     <div
       className={cn(
-        " w-10 h-10 justify-center p-5 border border-stone-400 flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-full font-thin tracking-wider ",
+        " justify-center p-5 border border-stone-400 flex flex-col bg-transparent px-3 py-2 items-center hover:bg-stone-100/80 hover:cursor-pointer select-none rounded-full font-thin tracking-wider ",
         className
       )}
       onClick={onClick}

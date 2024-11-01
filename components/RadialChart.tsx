@@ -38,7 +38,7 @@ export default function Component() {
   const totalVisitors = chartData[0].desktop + chartData[0].mobile;
 
   return (
-    <div className="flex flex-col mx-auto bg-neutral-400 max-w-[300px] border rounded-xl">
+    <div className="flex flex-col mx-auto bg-neutral-400 max-w-[300px] border rounded-xl border-black">
       <div className="flex flex-row justify-between pt-4 px-5 ">
         <CustomLabel>Oui 67%</CustomLabel>
         <CustomLabel>Non 33%</CustomLabel>
@@ -85,20 +85,20 @@ export default function Component() {
             stackId="a"
             cornerRadius={5}
             fill="var(--color-desktop)"
-            className="stroke-transparent stroke-2"
+            className="stroke-transparent stroke-1 "
           />
           <RadialBar
             dataKey="mobile"
             fill="var(--color-mobile)"
             stackId="a"
             cornerRadius={5}
-            className="stroke-transparent stroke-2"
+            className="stroke-transparent stroke-1"
           />
         </RadialBarChart>
       </ChartContainer>
       <div className="-mt-24 flex flex-col">
         <p className="flex justify-center m-3 text-sm">4 abstentions</p>
-        <hr className="flex justify-center border-black w-4/5  " />
+        <hr className="flex mx-auto border-black w-4/5  " />
         <p className="flex justify-center m-3 ">Dans votre circonscription</p>
       </div>
     </div>
