@@ -7,10 +7,12 @@ const Label = ({
   children,
   symbol,
   className,
+  color,
 }: {
   children: React.ReactNode;
   symbol?: "dot" | "speaker";
   className?: string;
+  color?: string;
 }) => {
   return (
     <div
@@ -20,7 +22,12 @@ const Label = ({
       )}
     >
       {symbol === "dot" ? (
-        <span className=" static flex h-2 w-2 my-auto rounded-full mx-1  bg-white "></span>
+        <span
+          className={cn(
+            " static flex h-2 w-2 my-auto rounded-full mx-1 bg-white  ",
+            color
+          )}
+        ></span>
       ) : (
         symbol === "speaker" && <Speech className="flex my-auto h-4 w-4 " />
       )}

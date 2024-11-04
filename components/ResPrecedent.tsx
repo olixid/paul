@@ -18,19 +18,20 @@ const ResPrecedent = ({
           <div className="flex flex-rox space-x-3">
             <Label
               symbol="dot"
-              className="bg-transparent text-black border-black"
+              className="bg-transparent text-black border-black dark:text-white dark:border-white"
+              color="dark:bg-white bg-black"
             >
               Société
             </Label>
             <Label
               symbol="speaker"
-              className="bg-white border-neutral-300 text-black"
+              className="bg-neutral-100 border-neutral-400 text-black"
             >
               Question d'opinion
             </Label>
           </div>
           <p>{children}</p>
-          <p className="text-neutral-500 text-sm">{date}</p>
+          <p className="text-neutral-500 text-[12px]">{date}</p>
         </div>
         <ChevronRight className="flex my-auto" />
       </div>

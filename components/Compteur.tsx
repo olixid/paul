@@ -6,15 +6,15 @@ import { ButtonVote } from "./Button";
 
 const Compteur = () => {
   const [compteur, setCompteur] = useState(0);
-  const myPlus = () => {
+  const increase = () => {
     setCompteur((oldcompteur) => oldcompteur + 1);
   };
-  const myMoins = () => {
+  const decrease = () => {
     setCompteur((oldcompteur) => oldcompteur - 1);
   };
   return (
     <div className="flex flex-row gap-3">
-      <ButtonVote onClick={() => myMoins()}>-</ButtonVote>
+      <ButtonVote onClick={() => decrease()}>-</ButtonVote>
       <div
         className={cn(
           compteur > 0 && "text-green-300",
@@ -24,7 +24,7 @@ const Compteur = () => {
       >
         {compteur}
       </div>
-      <ButtonVote onClick={() => myPlus()}>+</ButtonVote>
+      <ButtonVote onClick={() => increase()}>+</ButtonVote>
     </div>
   );
 };
