@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonVote } from "@/components/Button";
 import Depute from "@/components/Depute";
 import SlideBadges from "@/components/SlideBadges";
@@ -13,87 +15,97 @@ import {
   User,
 } from "lucide-react";
 import React from "react";
+import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+import { ButtonProfil } from "@/components/Button";
+
+const supabase = createClient(
+  "https://axxhmtgucstevcqtpltc.supabase.co",
+  "<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4eGhtdGd1Y3N0ZXZjcXRwbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1Mzk5MjEsImV4cCI6MjA0NTExNTkyMX0.8RbGXncpqm2P914rl3W4jHtbildSLcjVr69cGDdg1dc>"
+);
 
 const Profil = () => {
   return (
-    <div className="bg-neutral-100 flex flex-col gap-5">
-      <div className="flex flex-col   p-7 pt-6 gap-10">
-        <p className="mx-5 font-semibold text-4xl"> Bonjour flo !</p>
-        <Depute
-          name="Anais Belouassa-Cherifi"
-          circons="Circoscription n°1 - Rhone"
-          parti="La France Insoumise"
-        />
-        <div className="flex flex-col gap-5">
-          <ButtonVote className="flex-row justify-between w-1/4 tracking-normal py-3 px-5 border-neutral-300">
-            <Forward className=" flex my-auto  " />
-            <div className="flex flex-col text-center ">
-              <p className="font-semibold">Partagez l'application !</p>
-              <p className="text-sm">Aidez-nous à agrandir l'échantillon</p>
-            </div>
-            <ChevronRight className="flex my-auto " />
-          </ButtonVote>
-          <ButtonVote className=" w-1/4 flex-row justify-between  tracking-normal py-3 px-5  border-neutral-300">
-            <Heart className=" flex my-auto  " />
-            <div className="flex flex-col text-center">
-              <p className="font-semibold">Soutenez Paul !</p>
-              <p className="text-sm">On a besoin de vous</p>
-            </div>
-            <ChevronRight className="flex my-auto " />
-          </ButtonVote>
+    <div className="bg-neutral-200 dark:bg-neutral-900 flex flex-col gap-5">
+      <p className="tel:mx-14 mx-10  mt-9 mb-4 font-semibold text-4xl">
+        Bonjour flo !
+      </p>
+      <div className="flex flex-col   p-7 pt-6 gap-10 md:flex-row md:justify-around">
+        <div className="flex justify-center">
+          <Depute
+            name="Anais Belouassa-Cherifi"
+            circons="Circoscription n°1 - Rhone"
+            parti="La France Insoumise"
+          />
         </div>
-        <SlideBadges />
+        <div className="flex flex-col gap-5 my-auto ">
+          <div className="flex justify-center">
+            <ButtonVote className="flex flex-row justify-between lg:w-96  w-80 tracking-normal py-3 px-5 border-neutral-300 bg-white dark:text-black hover:bg-neutral-100 dark:hover:border-neutral-400 dark:hover:bg-neutral-400">
+              <Forward className=" flex my-auto  " />
+              <div className="flex flex-col text-center ">
+                <p className="font-semibold">Partagez l'application !</p>
+                <p className="text-sm">Aidez-nous à agrandir l'échantillon</p>
+              </div>
+              <ChevronRight className="flex my-auto " />
+            </ButtonVote>
+          </div>
+          <div className="flex justify-center">
+            <ButtonVote className=" flex flex-row justify-between lg:w-96  w-80 tracking-normal py-3 px-5  border-neutral-300 bg-white dark:text-black  hover:bg-neutral-100 dark:hover:border-neutral-400 dark:hover:bg-neutral-400">
+              <Heart className=" flex my-auto  " />
+              <div className="flex flex-col text-center">
+                <p className="font-semibold">Soutenez Paul !</p>
+                <p className="text-sm">On a besoin de vous</p>
+              </div>
+              <ChevronRight className="flex my-auto " />
+            </ButtonVote>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col gap-5">
+        <SlideBadges />
         <div>
-          <div className="bg-white w-full border border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <User />
-            <p className=" my-auto font-semibold">Mon compte</p>
-          </div>
-          <div className="bg-white w-full border-b border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <Bell />
+          <ButtonProfil>
+            <User className=" my-auto " />
+            <p className=" my-auto ">Mon compte</p>
+          </ButtonProfil>
+          <ButtonProfil className=" border-t-0 ">
+            <Bell className=" my-auto " />
             <p className=" my-auto font-semibold">Notifications</p>
-          </div>
+          </ButtonProfil>
         </div>
 
         <div>
-          <div className="bg-white w-full border border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <Lock />
-            <p className=" my-auto font-semibold">
-              Sécurité et confidentialité
-            </p>
-          </div>
-          <div className="bg-white w-full border-b border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <MessageCircle />
-            <p className=" my-auto font-semibold">Le mot des créateurs</p>
-          </div>
+          <ButtonProfil>
+            <Lock className=" my-auto " />
+            <p className=" my-auto ">Sécurité et confidentialité</p>
+          </ButtonProfil>
+          <ButtonProfil className=" border-t-0 ">
+            <MessageCircle className=" my-auto " />
+            <p className=" my-auto ">Le mot des créateurs</p>
+          </ButtonProfil>
         </div>
 
         <div>
-          <div className="bg-white w-full border border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <Star />
-            <p className=" my-auto font-semibold">Noter l'application</p>
-          </div>
-          <div className="bg-white w-full border-b border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <MessageSquare />
-            <p className=" my-auto font-semibold">Feedback</p>
-          </div>
+          <ButtonProfil>
+            <Star className=" my-auto " />
+            <p className=" my-auto ">Noter l'application</p>
+          </ButtonProfil>
+          <ButtonProfil className=" border-t-0 ">
+            <MessageSquare className=" my-auto " />
+            <p className=" my-auto ">Feedback</p>
+          </ButtonProfil>
         </div>
 
         <div>
-          <div className="bg-white w-full border border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <p className="text-[15px] my-auto ">Politique de confidentialité</p>
-          </div>
-          <div className="bg-white w-full border-b border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-            <p className=" text-[15px] my-auto ">Conditions d'utilisation</p>
-          </div>
+          <ButtonProfil className="font-normal hover:font-normal">
+            Politique de confidentialité
+          </ButtonProfil>
+          <ButtonProfil className="border-t-0 font-normal hover:font-normal">
+            Conditions d'utilisation
+          </ButtonProfil>
         </div>
 
-        <div className="bg-white w-full border border-neutral-300 py-4 px-7 flex flex-row space-x-3 ">
-          <p className=" text-[15px] my-auto text-red-500 font-semibold ">
-            Déconnexion
-          </p>
-        </div>
+        <ButtonProfil className="  text-red-500 ">Déconnexion</ButtonProfil>
 
         <div />
       </div>

@@ -10,37 +10,46 @@ const StatDetaillees = ({
   question,
   theme,
 }: {
-  question?: string;
-  theme?: string;
+  question: string;
+  theme: string;
 }) => {
   return (
     <>
-      <div className="flex flex-col gap-3 ">
-        <div className=" flex justify-center">
-          <Label symbol="dot">Developpement durable{theme}</Label>
+      <div className="flex flex-col gap-4 ">
+        <div className="flex justify-center mt-2">
+          <Label
+            symbol="dot"
+            className="bg-neutral-900 dark:bg-neutral-300 dark:text-neutral-900"
+            color="dark:bg-neutral-900"
+          >
+            {theme}
+          </Label>
         </div>
-        <p>{question}</p>
-        <ButtonVote>En savoir plus sur la question</ButtonVote>
 
-        <div>
-          <p>Resultats autour de vous*</p>
-          <RadialChart />
-        </div>
-        <div>
-          <p>Les citoyens*</p>
-          <RadialChart />
-        </div>
-        <p>
-          *Ces données sont basées sur les votes des utilisateurs de Paul,
+        <p className="text-center text-xl">{question}</p>
+        <ButtonVote className="w-64 text-center mx-auto my-4 text-sm dark:text-neutral-600 dark:border-neutral-600 mt-2 shadow-md dark:bg-transparent bg-neutral-200 border-neutral-500 text-neutral-500 hover:font-normal hover:bg-neutral-300 dark:hover:bg-neutral-900 dark:hover:font-semibold ">
+          En savoir plus sur la question
+        </ButtonVote>
+
+        <p className=" ml-5 mt-3 font-semibold text-lg">
+          Resultats autour de vous *
+        </p>
+        <RadialChart oui={1545} non={234} autour={true} />
+
+        <p className=" ml-5 mt-6 font-semibold text-lg">Les citoyens *</p>
+        <RadialChart oui={45} non={285} />
+
+        <p className="text-center mt-9 text-sm">
+          * Ces données sont basées sur les votes des utilisateurs de Paul,
           partagez l'app pour nous aider à faire grandir l'échantillon de
           personnes !
         </p>
-        <ButtonVote>
-          <div className="flex flex-row space-x-2">
-            <p className="flex my-auto tracking-normal">
+        <ButtonVote className="w-56 justify-center mt-2 mx-auto shadow-md dark:text-neutral-800 dark:border-transparent  dark:bg-white bg-neutral-900 text-neutral-300 hover:bg-current dark:hover:bg-white ">
+          <div className="flex flex-row space-x-2 justify-center">
+            <p className="flex my-auto tracking-normal text-sm">
               Partagez l'application
             </p>
-            <ExternalLink className="flex size-4 my-auto" />
+            <ExternalLink className="flex size-4 my-auto " />
           </div>
         </ButtonVote>
       </div>

@@ -68,7 +68,7 @@ const Question = ({
   }) => {
     return (
       <>
-        <div className=" flex flex-row sm:flex-row justify-between w-full gap-3">
+        <div className=" flex flex-row sm:flex-row justify-between w-full gap-3 lg:mt-3">
           <div className="flex flex-row">
             <Vote className=" my-auto size-5" />
             <p className=" mx-1 my-auto ">Autour de vous</p>
@@ -85,7 +85,7 @@ const Question = ({
         </div>
         <ProgressBar
           value={pourcentage}
-          className={reponse === "Non" ? "bg-indigo-300 " : ""}
+          className={reponse === "Non" ? "bg-indigo-300 lg:my-3" : "lg:my-3"}
         />
       </>
     );
@@ -110,7 +110,7 @@ const Question = ({
   return (
     <div
       className={cn(
-        "flex flex-col max-w-sm lg:max-w-md lg:h-min lg:mx-10 mx-auto rounded-2xl py-4 px-6 shadow-lg md:gap-5 gap-3 border border-black m-7 lg:mt-12 bg-neutral-50 dark:bg-neutral-800 dark:text-white ",
+        "flex flex-col max-w-sm lg:max-w-md lg:h-min  rounded-2xl py-4 px-6 shadow-lg lg:gap-5  gap-3 border border-black m-7 lg:mt-12 bg-neutral-50 dark:bg-neutral-800 dark:text-white ",
         className
       )}
     >
@@ -118,12 +118,12 @@ const Question = ({
         {intitule === "Question d'opinion" ? (
           <Label
             symbol="speaker"
-            className="my-auto uppercase text-sm  text-black dark:text-white  font-semibold bg-transparent border-transparent"
+            className="my-auto uppercase  text-black dark:text-white  font-semibold bg-transparent border-transparent "
           >
             {intitule}
           </Label>
         ) : (
-          <Label className="my-auto uppercase text-sm dark:text-black text-white  font-semibold bg-transparent border-transparent">
+          <Label className="my-auto uppercase  dark:text-black text-white  font-semibold bg-transparent border-transparent ">
             {intitule}
           </Label>
         )}
@@ -158,7 +158,7 @@ const Question = ({
       )}
 
       <div className="flex flex-col items-center gap-4">
-        <div className="sm:text-2xl text-xl leading-8">{question}</div>
+        <div className="sm:text-2xl text-xl leading-8 ">{question}</div>
         {answer === true ? (
           <Send />
         ) : intitule === "Question d'opinion" ? (

@@ -14,9 +14,9 @@ const BlockMenu = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col  border dark:border-transparent border-neutral-500 bg-neutral-200 rounded-3xl p-5  tel:w-5/6 w-full h-full gap-3 dark:text-black">
+      <div className="flex flex-col  border dark:border-transparent border-neutral-500 bg-neutral-200 rounded-3xl tel:p-5 p-0  md:w-5/6 tel:w-[90%] w-full h-full gap-3 dark:text-black">
         <div className="flex lg:flex-row  lg:justify-around  flex-col lg:relative gap-3">
-          <div className="lg:flex-none flex lg:justify-normal justify-center">
+          <div className="lg:flex-none flex lg:float-left justify-center">
             <Question
               question="Michel Banier doit-il avoir recours à l'article 49-3 pour faire adopter le budget ?"
               theme="Société"
