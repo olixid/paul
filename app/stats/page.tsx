@@ -1,5 +1,5 @@
 import StatDetaillees from "@/components/StatDetaillees";
-import { ArrowBigLeft, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 const page = () => {
   return (
@@ -21,7 +21,7 @@ const page = () => {
       <div className="static p-5 pt-24">
         <StatDetaillees
           question="Faut-il rendre le nutriscore obligatoire en France ?"
-          theme="Développement durable"
+          theme="Société"
         />
       </div>
     </div>

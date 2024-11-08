@@ -1,4 +1,5 @@
 import BlockMenu from "@/components/BlockMenu";
+
 import { ThemeToggle } from "@/components/themeToggle";
 
 export const Home = () => {
@@ -23,7 +24,7 @@ export const Home = () => {
           <br /> blabla
         </BlockMenu>
       </div>
-      <div className="flex justify-end p-5">
+      <div className="tel:absolute md:ml-8 tel:ml-4 tel:mt-4 static flex justify-end -mt-8 mr-2 ">
         <ThemeToggle />
       </div>
     </div>

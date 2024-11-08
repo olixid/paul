@@ -3,7 +3,7 @@ import Badges from "./Badges";
 
 const SlideBadges = () => {
   return (
-    <div className="flex flex-col gap-2 ml-7">
+    <div className="flex flex-col gap-2 ml-7 overflow-x-auto">
       <div className="flex flex-row justify-between lg:justify-center ">
         <p className="font-semibold text-xl">Vos badges citoyens</p>
         <p>2/7</p>

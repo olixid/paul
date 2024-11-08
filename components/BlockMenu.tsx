@@ -14,7 +14,7 @@ const BlockMenu = ({
 }) => {
   return (
     <>
-      <div className="flex flex-col  border dark:border-transparent border-neutral-500 bg-neutral-200 rounded-3xl tel:p-5 p-0  md:w-5/6 tel:w-[90%] w-full h-full gap-3 dark:text-black">
+      <div className="flex flex-col  border dark:border-transparent border-neutral-500 bg-neutral-200 tel:rounded-3xl rounded-t-3xl  tel:p-5 p-0 pb-4 tel:mb-0 -mb-5 md:w-5/6 tel:w-[90%] w-full h-full gap-3 dark:text-black">
         <div className="flex lg:flex-row  lg:justify-around  flex-col lg:relative gap-3">
           <div className="lg:flex-none flex lg:float-left justify-center">
             <Question

@@ -3,18 +3,24 @@
 import React from "react";
 import { ButtonIcon, ButtonVote } from "./Button";
 import Label from "./Label";
-import { ArrowRight, SendIcon, Share, Vote } from "lucide-react";
+import { ArrowLeft, ArrowRight, SendIcon, Share, Vote } from "lucide-react";
 import { dot } from "node:test/reporters";
 import { ProgressBar } from "@/components/ProgressBar";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import StatDetaillees from "./StatDetaillees";
+import Stats from "./Stats";
 
 const Question = ({
+  stats = false,
+  handleClick = () => {},
   question,
   theme,
   intitule,
   className,
 }: {
+  stats?: Boolean;
+  handleClick?: Function;
   question: string;
   theme: string;
   intitule: "Question d'opinion" | "Hier";
@@ -22,15 +28,18 @@ const Question = ({
 }) => {
   const [answer, setAnswer] = useState(false);
   const send = () => {
-    setAnswer((answer) => true);
+    setAnswer(true);
   };
   const Choice = () => {
-    const [compteur, setCompteur] = useState(0);
-    const increase = () => {
-      setCompteur((oldcompteur) => oldcompteur + 1);
+    const [vote, setVote] = useState({ pour: 0, contre: 0, rien: 0 });
+    const votePour = () => {
+      setVote({ ...vote, pour: vote.pour + 1 });
     };
-    const decrease = () => {
-      setCompteur((oldcompteur) => oldcompteur - 1);
+    const voteContre = () => {
+      setVote({ ...vote, contre: vote.contre + 1 });
+    };
+    const voteRien = () => {
+      setVote({ ...vote, rien: vote.rien + 1 });
     };
 
     return (
@@ -38,20 +47,20 @@ const Question = ({
         <div className=" flex flex-row w-full gap-3">
           <ButtonVote
             className="border-amber-400 "
-            onClick={() => (increase(), send())}
+            onClick={() => (votePour(), send())}
           >
             Oui
           </ButtonVote>
           <ButtonVote
             className="border-indigo-300 h-14"
-            onClick={() => (decrease(), send())}
+            onClick={() => (voteContre(), send())}
           >
             Non
           </ButtonVote>
         </div>
         <ButtonVote
           className="h-14 dark:border-white"
-          onClick={() => (increase(), send())}
+          onClick={() => (voteRien(), send())}
         >
           Je m'abstiens
         </ButtonVote>
@@ -114,6 +123,7 @@ const Question = ({
         className
       )}
     >
+      {stats && <Stats handleClick={() => handleClick()} />}
       <div className="flex flex-row justify-between lg:pt-2">
         {intitule === "Question d'opinion" ? (
           <Label
@@ -128,13 +138,16 @@ const Question = ({
           </Label>
         )}
 
-        <ButtonIcon className="p-[10px] border-neutral-300 ">
+        <ButtonVote
+          className="p-[10px] border-neutral-300 rounded-full w-11 h-11"
+          onClick={() => handleClick()}
+        >
           {intitule === "Question d'opinion" ? (
-            <Share className="tel:size-5 size-4" />
+            <Share className="tel:size-5 size-4  mx-auto" />
           ) : (
-            <ArrowRight className="tel:size-5 size-4" />
+            <ArrowRight className="tel:size-5 size-4 mx-auto" />
           )}
-        </ButtonIcon>
+        </ButtonVote>
       </div>
 
       <hr className="border-neutral-300" />

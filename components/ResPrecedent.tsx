@@ -5,9 +5,11 @@ import Label from "./Label";
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 const ResPrecedent = ({
+  handleClick,
   children,
   date,
 }: {
+  handleClick: Function;
   children: React.ReactNode;
   date: string;
 }) => {
@@ -33,7 +35,7 @@ const ResPrecedent = ({
           <p>{children}</p>
           <p className="text-neutral-500 text-[12px]">{date}</p>
         </div>
-        <ChevronRight className="flex my-auto" />
+        <ChevronRight className="flex my-auto" onClick={() => handleClick()} />
       </div>
       <hr className="border-stone-400" />
     </>
