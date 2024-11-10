@@ -9,9 +9,13 @@ import { ExternalLink } from "lucide-react";
 const StatDetaillees = ({
   question,
   theme,
+  printInfo,
+  context,
 }: {
   question: string;
   theme: string;
+  printInfo: Function;
+  context: Boolean;
 }) => {
   return (
     <>
@@ -27,8 +31,11 @@ const StatDetaillees = ({
         </div>
 
         <p className="text-center text-xl">{question}</p>
-        <ButtonVote className="w-64 text-center mx-auto  text-sm dark:text-neutral-600 dark:border-neutral-600 mt-2 shadow-md dark:bg-transparent bg-neutral-200 border-neutral-500 text-neutral-500 hover:font-normal hover:bg-neutral-300 dark:hover:bg-neutral-900 dark:hover:font-semibold ">
-          En savoir plus sur la question
+        <ButtonVote
+          className="w-64 text-center mx-auto  text-sm dark:text-neutral-600 dark:border-neutral-600 mt-2 shadow-md dark:bg-transparent bg-neutral-200 border-neutral-500 text-neutral-500 hover:font-normal hover:bg-neutral-300 dark:hover:bg-neutral-900 dark:hover:font-semibold "
+          onClick={() => printInfo()}
+        >
+          {!context ? "En savoir plus sur la question" : "Masquer le contexte"}
         </ButtonVote>
         <div className="flex sm:flex-row flex-col gap-4 sm:gap-0 sm:justify-around">
           <div className="flex flex-col my-auto gap-2">

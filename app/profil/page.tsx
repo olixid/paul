@@ -19,11 +19,6 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { ButtonProfil } from "@/components/Button";
 
-const supabase = createClient(
-  "https://axxhmtgucstevcqtpltc.supabase.co",
-  "<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4eGhtdGd1Y3N0ZXZjcXRwbHRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1Mzk5MjEsImV4cCI6MjA0NTExNTkyMX0.8RbGXncpqm2P914rl3W4jHtbildSLcjVr69cGDdg1dc>"
-);
-
 const Profil = () => {
   return (
     <div className="bg-neutral-200 dark:bg-neutral-900 flex flex-col gap-5">

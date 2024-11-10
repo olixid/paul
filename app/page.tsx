@@ -12,17 +12,7 @@ export const Home = () => {
         <p className="text-neutral-500 my-auto">6102 votant(e)s</p>
       </div>
       <div className="flex justify-center ">
-        <BlockMenu
-          pour="ckjdhcjhsghsgdy  /nhgdjsdgcbjhsgdyzejgjsd
-          dfsdfsdffgreqfrqgrqgtggdfvg(-(z(st"
-          contre="bhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcbbhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcbbhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcbbhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcbbhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcbbhjcgysdgbnfbsdjgcsbdnbrze hgdhjgcbds fejhchbeh,gdjhcb"
-        >
-          texte <br />
-          hgj
-          <br />
-          ghf
-          <br /> blabla
-        </BlockMenu>
+        <BlockMenu />
       </div>
       <div className="tel:absolute md:ml-8 tel:ml-4 tel:mt-4 static flex justify-end -mt-8 mr-2 ">
         <ThemeToggle />

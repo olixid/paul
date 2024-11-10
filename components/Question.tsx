@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { ButtonIcon, ButtonVote } from "./Button";
 import Label from "./Label";
 import { ArrowLeft, ArrowRight, SendIcon, Share, Vote } from "lucide-react";
@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import StatDetaillees from "./StatDetaillees";
 import Stats from "./Stats";
+import Context from "./Context";
 
 const Question = ({
   stats = false,
@@ -30,8 +31,14 @@ const Question = ({
   const send = () => {
     setAnswer(true);
   };
+
+  const [context, setContext] = useState(false);
+  const printContext = () => {
+    setContext((context) => !context);
+  };
+
+  const [vote, setVote] = useState({ pour: 0, contre: 0, rien: 0 });
   const Choice = () => {
-    const [vote, setVote] = useState({ pour: 0, contre: 0, rien: 0 });
     const votePour = () => {
       setVote({ ...vote, pour: vote.pour + 1 });
     };
@@ -119,11 +126,17 @@ const Question = ({
   return (
     <div
       className={cn(
-        "flex flex-col max-w-sm lg:max-w-md lg:h-min  rounded-2xl py-4 px-6 shadow-lg lg:gap-5  gap-3 border border-black m-7 lg:mt-12 bg-neutral-50 dark:bg-neutral-800 dark:text-white ",
+        "flex flex-col max-w-sm lg:max-w-md lg:h-min  rounded-2xl py-4 px-6 shadow-lg lg:gap-5  gap-3 border border-black m-7 lg:mt-12 bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:border-transparent",
         className
       )}
     >
-      {stats && <Stats handleClick={() => handleClick()} />}
+      {stats && (
+        <Stats
+          handleClick={() => handleClick()}
+          printInfo={() => printContext()}
+          context={context}
+        />
+      )}
       <div className="flex flex-row justify-between lg:pt-2">
         {intitule === "Question d'opinion" ? (
           <Label

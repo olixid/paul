@@ -8,7 +8,7 @@ import React, { useState } from "react";
 const Results = () => {
   const [stats, setStats] = useState(false);
   function printStats() {
-    setStats(!stats);
+    setStats((stats) => !stats);
   }
 
   return (
